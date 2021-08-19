@@ -1,0 +1,14 @@
+Well done!
+
+4.
+a) -0.25
+Expected result: SELECT COUNT(DISTINCT PersonType) AS DistinctCount.....
+You forgot to add count. When the task is about calculating amount of rows, you can't rely on the number in the corner of the window.
+c) -1
+Correct answer:
+SELECT MIN(Weight) AS Min_weight, 
+		MAX(Size) AS Max_size
+FROM Production.Product
+Order and top functions will not help you to find min and max. In your particular case size is the biggest only for this weight, but not for the whole table. Also where condition was not required.
+
+Mark: 9.
