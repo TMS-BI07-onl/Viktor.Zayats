@@ -1,0 +1,10 @@
+Well done!
+
+C
+It's not applying 2nf, it's applying 1nf. 
+
+E
+It would be better to rename province_id in the fact table to location_id or smth, because you have more information under that id, not only province.
+
+
+Mark: 10
