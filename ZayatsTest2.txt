@@ -1,0 +1,72 @@
+/*
+1) Найдите людей и их номера телефонов, код города которых начинается на  4 и заканчивается на 5.
+( таблицы Person.PersonPhone, Person.Person) 
+*/
+SELECT *
+FROM Person.PersonPhone 
+
+SELECT *
+FROM Person.Person
+
+
+SELECT T1.[FirstName], T1.[LastName], T2.[PhoneNumber]
+FROM Person.Person T1 JOIN Person.PersonPhone  T2
+ON T1.BusinessEntityID = T2.BusinessEntityID
+WHERE T2.[PhoneNumber] LIKE ('4_5%')
+ 
+ 
+/*
+2) Отнести каждого человека из [HumanResources].[Employee] в свою возрастную категорию:
+Adolescence: 17-20
+Adults: 21-59
+Elderly: 60-75
+Senile: 76-90
+*/
+
+
+
+SELECT [BusinessEntityID], DATEPART(YYYY,BirthDate) AS Bir, DATEPART(YYYY,GETDATE()) As now,
+CASE
+WHEN DATEPART(YYYY,GETDATE()) - DATEPART(YYYY,BirthDate) < 20 THEN 'Adolescence'
+WHEN DATEPART(YYYY,GETDATE()) - DATEPART(YYYY,BirthDate) < 59 THEN 'Adults'
+WHEN DATEPART(YYYY,GETDATE()) - DATEPART(YYYY,BirthDate) < 75 THEN 'Elderly'
+WHEN DATEPART(YYYY,GETDATE()) - DATEPART(YYYY,BirthDate) < 90 THEN 'Senile'
+ELSE 'Not found'
+END Result
+FROM [HumanResources].[Employee]
+
+
+
+/*
+3) Вывести самый дорогой продукт для каждого цвета из [Production].[Product]
+*/
+
+SELECT DISTINCT Color, MAX(ListPrice) OVER (PARTITION BY Color ) AS MaxPrice
+FROM [Production].[Product]
+
+4) 19 Автобусный парк
+ Таблица Диспетчерская
+ Код авто
+ Код водителя
+ Время прибытия
+ Время отбытия
+ 
+ Таблица Маршрут
+ Код маршрута
+ Пункт назначения
+ Расстояние
+ Время в пути
+ 
+ Таблица Водитель
+ ФИО водителя
+ Код водителя
+ Номер паспорта
+ Телефон
+ 
+ Таблица Автомобили
+ Код авто
+ Номер авто
+ Год выпуска
+ Марка
+ Пробег
+ Категория
