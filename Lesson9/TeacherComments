@@ -1,0 +1,7 @@
+Well done!
+
+-2
+Your logic about FK is right, need to generate duplicate values.
+For generating: you can (for example) substract rand number from getdate or convert rand number to seconds. 
+
+Mark: 8.
