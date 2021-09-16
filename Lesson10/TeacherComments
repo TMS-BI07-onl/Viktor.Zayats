@@ -1,0 +1,7 @@
+Well done!
+
+No negative comments, great job!
+Technically, it's not a mistake, but I think that there was no need to pre-calculate sum in the inner query, you just gave more work to the database.
+
+Mark: 10
+Test mark: 8
