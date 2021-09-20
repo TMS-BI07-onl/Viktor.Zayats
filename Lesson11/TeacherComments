@@ -1,0 +1,16 @@
+Well done!
+
+Homework
+Your solution is correct, but there is a much easier way to filter out NULLs:
+...
+WHEN NOT MATCHED AND IrinaPashkovich IS NOT NULL
+THEN INSERT...
+
+Test
+1
+There is no need to count animal id's in inner query, you're just make your query heavier.
+2
+Remember that it's bad manner to have a column filter in the having clause. Having is only for aggregated filters.
+
+Mark: 10
+Test: 10
