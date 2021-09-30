@@ -1,0 +1,6 @@
+Well done!
+
+Number of points case can be in the same select with first rank. There is no need to move it to another step.
+As a matter of fact, if you already created dense_rank on the last step, it's more convinient to use it in where to filter number of trainers to 50.
+
+Mark: 10
