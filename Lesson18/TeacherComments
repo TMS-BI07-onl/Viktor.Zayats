@@ -1,0 +1,17 @@
+Well done!
+
+1. -1
+It would be the correct answer if you had only manager_id in the select.
+Another solution:
+SELECT man.first_name, man.cast_name, COUNT(emp.employee_id) as cnt_of_emp
+FROM employees man JOIN employees emp ON man.employee_id=emp.manager_id
+GROUP BY man.first_name, man.cast_name
+HAVING COUNT(emp.employee_id)>6
+
+3. 
+Why not to join without the subquery?
+
+5.
+Group by is not needed.
+
+Mark: 9
